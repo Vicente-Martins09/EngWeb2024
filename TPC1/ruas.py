@@ -117,6 +117,7 @@ for xmlFile in os.listdir(xml_dir):
         html_rua += f"  <li>Enfiteuta: {enfiteuta}</li>\n   <li>Foro: {foro}</li>\n"
         
         desc_element = casa.find("desc")
+    
         
         if desc_element is not None:
             desc_content = "" 
@@ -132,8 +133,8 @@ for xmlFile in os.listdir(xml_dir):
                 
                 desc_content += f"<p>{para2_content}</p>"
             # Adiciona o conteúdo do parágrafo ao HTML
+            
             html_rua += f"  <li>Descrição: {desc_content}</li>\n"
-        
         
     html_rua += "\n\n</ul>\n\n"  
     html_rua+= '<h6><a href="../mapa_de_ruas.html">Voltar</a></h6>\n'
