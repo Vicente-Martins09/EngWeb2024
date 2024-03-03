@@ -28,7 +28,6 @@ http.createServer((req,res) =>{
             Promise.all([
                 axios.get('http://localhost:3000/cidades?nome='+cidadeNome),
                 axios.get('http://localhost:3000/ligacoes')
-                
             ])
             .then((resp)=>{     
                 const cidade = resp[0].data[0];
@@ -53,7 +52,6 @@ http.createServer((req,res) =>{
                 } else {
                     res.write("Cidade não encontrada.");
                 }
-                res.end();
             }).catch( erro =>{
                 console.log("Erro: " + erro);
             })
