@@ -213,7 +213,7 @@ var compositoresServer = http.createServer((req, res) => {
                     })
                 }
 
-                if (req.url== '/periodos/registo'){
+                else if (req.url== '/periodos/registo'){
                     collectRequestBodyData(req, result=>{
                         if(result){
                             axios.post("http://localhost:3000/periodos",result)
@@ -240,7 +240,7 @@ var compositoresServer = http.createServer((req, res) => {
                 else if(/\/compositores\/edit\/C[0-9]+$/i.test(req.url)){
                     collectRequestBodyData(req, result=>{
                         if(result){
-                            axios.post("http://localhost:3000/compositores/",result.id,result)
+                            axios.put("http://localhost:3000/compositores/" + result.id,result)
                                 .then(resp=>{
                                     console.log(resp.data)
                                     res.writeHead(201, {'Content-Type' : 'text/html; charset=utf-8'})
@@ -264,7 +264,7 @@ var compositoresServer = http.createServer((req, res) => {
                 else if(/\/periodos\/edit\/P[0-9]+$/i.test(req.url)){
                     collectRequestBodyData(req, result=>{
                         if(result){
-                            axios.post("http://localhost:3000/periodos/",result.id,result)
+                            axios.put("http://localhost:3000/periodos/" + result.id,result)
                                 .then(resp=>{
                                     console.log(resp.data)
                                     res.writeHead(201, {'Content-Type' : 'text/html; charset=utf-8'})

@@ -1375,6 +1375,46 @@
       "dataNasc": "cd",
       "dataObito": "cd",
       "periodo": "cd"
+    },
+    {
+      "id": "a",
+      "nome": "",
+      "bio": "a",
+      "dataNasc": "a",
+      "dataObito": "aa",
+      "periodo": "a"
+    },
+    {
+      "id": "C1002",
+      "nome": "w",
+      "bio": "ww",
+      "dataNasc": "w",
+      "dataObito": "w",
+      "periodo": "ww"
+    },
+    {
+      "id": "C10000",
+      "nome": "a",
+      "bio": "a",
+      "dataNasc": "a",
+      "dataObito": "a",
+      "periodo": "a"
+    },
+    {
+      "id": "b",
+      "nome": "b",
+      "bio": "b",
+      "dataNasc": "b",
+      "dataObito": "b",
+      "periodo": "b"
+    },
+    {
+      "id": "a",
+      "nome": "a",
+      "bio": "a",
+      "dataNasc": "a",
+      "dataObito": "a",
+      "periodo": "a"
     }
   ],
   "periodos": [
@@ -1403,8 +1443,15 @@
       "id": "P5",
       "nome": "a",
       "origem": "a",
-      "seculo": "aa",
-      "desc": "a"
+      "sec": "undefined",
+      "desc": "aa"
+    },
+    {
+      "id": "b",
+      "nome": "b",
+      "origem": "b",
+      "seculo": "b",
+      "desc": "b"
     }
   ]
 }
