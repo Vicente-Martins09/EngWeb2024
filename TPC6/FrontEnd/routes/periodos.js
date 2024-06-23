@@ -16,19 +16,6 @@ router.get('/', function(req, res, next) {
     })
 });
 
-router.get('/:idPeriodo', function(req, res, next) {
-    var d = new Date().toISOString().substring(0, 16)
-    axios.get("http://localhost:16000/periodos/" + req.params.idPeriodo)
-        .then(resp=>{
-            var periodo = resp.data
-            res.status(200).render("periodoPage",{"periodo": periodo, "date":d})
-        
-        })
-        .catch(erro=>{
-        res.status(503).render("erro",{"erro": erro})
-        })
-});
-
 
 
 
@@ -52,6 +39,18 @@ router.post('/Add', function(req, res, next) {
         })
 });
 
+router.get('/:idPeriodo', function(req, res, next) {
+    var d = new Date().toISOString().substring(0, 16)
+    axios.get("http://localhost:16000/periodos/" + req.params.idPeriodo)
+        .then(resp=>{
+            var periodo = resp.data
+            res.status(200).render("periodoPage",{"periodo": periodo, "date":d})
+        
+        })
+        .catch(erro=>{
+        res.status(503).render("erro",{"erro": erro})
+        })
+});
 
 router.get('/edit/:idPeriodo', function(req, res, next) {
     var d = new Date().toISOString().substring(0, 16)

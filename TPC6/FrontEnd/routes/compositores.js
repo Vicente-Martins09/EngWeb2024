@@ -16,18 +16,7 @@ router.get('/', function(req, res, next) {
   })
 });
 
-router.get('/:idCompositor', function(req, res, next) {
-  var d = new Date().toISOString().substring(0, 16)
-  axios.get("http://localhost:3000/compositores/" + req.params.idCompositor)
-      .then(resp=>{
-          var compositor = resp.data
-          res.status(200).render("compositorPage",{"compositor": compositor, "date":d})
-          
-      })
-      .catch(erro=>{
-          res.status(503).render("erro",{"erro": erro})
-      })
-});
+
 
 router.get('/Add', function(req, res, next) {
   var d = new Date().toISOString().substring(0, 16)
@@ -47,6 +36,20 @@ router.post('/Add', function(req, res, next) {
       })
 });
 
+router.get('/:idCompositor', function(req, res, next) {
+    var d = new Date().toISOString().substring(0, 16)
+    axios.get("http://localhost:3000/compositores/" + req.params.idCompositor)
+        .then(resp=>{
+            var compositor = resp.data
+            res.status(200).render("compositorPage",{"compositor": compositor, "date":d})
+            
+        })
+        .catch(erro=>{
+            res.status(503).render("erro",{"erro": erro})
+        })
+  });
+
+  
 router.get('/edit/:idCompositor', function(req, res, next) {
   var d = new Date().toISOString().substring(0, 16)
   axios.get("http://localhost:16000/compositores/" + req.params.idCompositor)
